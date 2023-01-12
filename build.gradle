@@ -14,7 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('https://repo.maven.apache.org/maven2')
+    }
 
+    maven {
+        url = uri('https://fynarfin.jfrog.io/artifactory/fyn-libs-snapshot-local/')
+    }
+}
+//dependencies {
+//    implementation 'org.apache.fineract.cn:anubis:1.1.0-SNAPSHOT'
+//}
 group 'org.apache.fineract.cn'
 
 task publishApiToMavenLocal {

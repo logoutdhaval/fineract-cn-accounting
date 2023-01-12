@@ -38,6 +38,9 @@ tasks.withType(JavaCompile) {
 }
 
 repositories {
+    maven {
+        url 'https://fynarfin.jfrog.io/artifactory/fyn-libs-snapshot-local/'
+    }
     jcenter()
     mavenLocal()
     maven { url 'https://mifos.jfrog.io/mifos/libs-snapshot/' }
@@ -59,7 +62,11 @@ ext['spring-data-releasetrain.version'] = 'Gosling-SR2A'
 dependencies {
     compile(
             [group: 'com.google.code.findbugs', name: 'jsr305'],
-            [group: 'org.apache.fineract.cn', name: 'postgresql', version: versions.frameworkpostgresql]
+            [group: 'org.apache.fineract.cn', name: 'postgresql', version: versions.frameworkpostgresql],
+            [group: 'org.apache.fineract.cn', name: 'anubis', version: '0.1.0-SNAPSHOT'],
+            [group: 'org.apache.fineract.cn.anubis', name: 'api', version: '0.1.0-BUILD-SNAPSHOT'],
+            [group: 'org.apache.fineract.cn.anubis', name: 'library', version: '0.1.0-BUILD-SNAPSHOT'],
+            [group: 'org.apache.fineract.cn.anubis', name: 'test', version: '0.1.0-BUILD-SNAPSHOT'],
     )
 
     testCompile(
